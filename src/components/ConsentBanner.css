@@ -1,0 +1,70 @@
+.consent-banner {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, calc(100% - 2rem));
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+  backdrop-filter: blur(6px);
+}
+
+.consent-content {
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+@media (min-width: 481px) {
+  .consent-content {
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  }
+}
+
+.consent-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.consent-text {
+  color: var(--gray-dark);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.consent-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.consent-btn {
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.consent-btn.primary {
+  background: var(--lime);
+  color: var(--black);
+  border-color: var(--lime);
+}
+
+.consent-btn.secondary {
+  background: var(--white);
+  color: var(--black);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.consent-btn.primary:hover {
+  filter: brightness(0.95);
+}
+
+.consent-btn.secondary:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+

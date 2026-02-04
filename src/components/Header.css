@@ -1,0 +1,284 @@
+/* HEADER MINIMALISTE */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              padding 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  padding: 1.2rem 3rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Hide header on scroll down */
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+.nav-content {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Logo avec image */
+.logo {
+  display: block;
+  height: 40px;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.logo-img {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.logo:hover {
+  opacity: 0.7;
+}
+
+.header.scrolled .logo {
+  height: 32px;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.nav-link {
+  color: var(--black);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--black);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--black);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  color: var(--black);
+}
+
+.nav-link.active {
+  color: var(--black);
+}
+
+.nav-link.active::after {
+  width: 100%;
+  color: var(--black);
+}
+
+/* CTA Header - Aplat couleur uniquement */
+.cta-header {
+  padding: 0.9rem 2rem;
+  background: var(--black);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 30px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  justify-self: end;
+}
+
+.cta-header:hover {
+  background: var(--lime);
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(205, 254, 0, 0.3);
+}
+
+/* CTA Mobile - hidden by default */
+.cta-mobile {
+  display: none;
+}
+
+/* Mobile Menu Button */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  position: absolute;
+  right: 2rem;
+}
+
+.mobile-menu:focus {
+  outline: none;
+}
+
+.mobile-menu:focus-visible {
+  outline: 2px solid transparent; /* garder accessible sans bordure visible par défaut du navigateur */
+  outline-offset: 2px;
+}
+
+.mobile-menu span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--black);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Mobile Menu Open Animation */
+.mobile-menu.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.mobile-menu.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Overlay */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  .nav-content {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  /* Mobile Navigation */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    background: var(--white);
+    padding: 6rem 2rem 2rem;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .nav-links.mobile-open {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .nav-link::after {
+    bottom: 0;
+  }
+
+  /* Show CTA in mobile menu */
+  .cta-mobile {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: var(--black);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .cta-mobile:hover {
+    background: var(--lime);
+    color: var(--black);
+    z-index: 1001;
+  }
+
+  /* Hide desktop CTA */
+  .cta-header {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    max-width: 320px;
+  }
+}

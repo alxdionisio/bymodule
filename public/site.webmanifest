@@ -1,0 +1,17 @@
+{
+  "name": "Module",
+  "short_name": "Module",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#cdfe00",
+  "icons": [
+    {
+      "src": "/module-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
