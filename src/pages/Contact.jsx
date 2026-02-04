@@ -38,6 +38,8 @@ export default function Contact() {
 
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -101,7 +103,7 @@ export default function Contact() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     const newErrors = validateForm();
@@ -112,19 +114,49 @@ export default function Contact() {
       return;
     }
 
-    // Simulate form submission
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    trackEvent('contact_submit', {
-      projectType: formData.projectType || '(none)',
-      servicesCount: formData.services.length,
-      budget: formData.budget || '(none)',
-      timeline: formData.timeline || '(none)',
-    });
+    try {
+      setIsSubmitting(true);
+      setSubmitError('');
 
-    // Reset after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
+      // Envoi via FormSubmit (aucun backend requis)
+      const endpoint = 'https://formsubmit.co/ajax/contact@bymodule.com';
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        projectType: formData.projectType,
+        services: formData.services.join(', '),
+        budget: formData.budget,
+        description: formData.description,
+        timeline: formData.timeline,
+        _subject: 'Nouveau lead byModule (site)',
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+
+      setIsSubmitted(true);
+      trackEvent('contact_submit', {
+        projectType: formData.projectType || '(none)',
+        servicesCount: formData.services.length,
+        budget: formData.budget || '(none)',
+        timeline: formData.timeline || '(none)',
+      });
+
+      // Reset du formulaire après succès
       setFormData({
         name: '',
         email: '',
@@ -136,7 +168,13 @@ export default function Contact() {
         description: '',
         timeline: ''
       });
-    }, 5000);
+    } catch (err) {
+      console.error('Form submit error', err);
+      setSubmitError("Une erreur est survenue. Réessayez dans un instant ou écrivez à contact@bymodule.com.");
+      trackEvent('contact_submit_fail', { reason: String(err) });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -203,7 +241,7 @@ export default function Contact() {
           {/* FORM SIDE */}
           <div className="contact-form-wrapper">
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} noValidate>
                 <h3 className="form-title">
                   Parlez-moi de<br />
                   votre projet
@@ -389,8 +427,9 @@ export default function Contact() {
                 </div>
 
                 <button type="submit" className="submit-btn">
-                  Envoyer ma demande
+                  {isSubmitting ? 'Envoi…' : 'Envoyer ma demande'}
                 </button>
+                {submitError && <div className="error-message" role="alert">{submitError}</div>}
               </form>
             ) : (
               <div className="success-message">
