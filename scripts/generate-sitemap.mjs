@@ -9,7 +9,7 @@ const servicesMod = await import(pathToFileURL(resolve(process.cwd(), 'src/data/
 const getAllProjects = projectsMod.getAllProjects || (() => []);
 const getAllServices = servicesMod.getAllServices || (() => Object.values(servicesMod.default || {}));
 
-const siteUrl = process.env.VITE_SITE_URL || process.env.SITE_URL || 'https://example.com';
+const siteUrl = process.env.VITE_SITE_URL || process.env.SITE_URL || 'https://bymodule.com';
 const urls = [
   '/',
   '/projets',
