@@ -253,7 +253,7 @@ export default function Home() {
             <div className="about-card">
               <h3 className="card-title">Développement web</h3>
               <p className="card-desc">
-                Sites web, applications mobiles, e-commerce. Je crée des produits 
+                Sites web, applications mobiles, e-commerce. Nous créons des produits 
                 digitaux performants avec les technologies modernes.
               </p>
             </div>
@@ -261,7 +261,7 @@ export default function Home() {
             <div className="about-card">
               <h3 className="card-title">Product management</h3>
               <p className="card-desc">
-                De la stratégie à l'exécution, j'accompagne vos projets avec une 
+                De la stratégie à l'exécution, nous accompagnons vos projets avec une 
                 vision produit claire et des méthodes éprouvées.
               </p>
             </div>
@@ -269,7 +269,7 @@ export default function Home() {
             <div className="about-card">
               <h3 className="card-title">Automatisation</h3>
               <p className="card-desc">
-                Intégration ERP, workflows automatisés. J'optimise vos processus 
+                Intégration ERP, workflows automatisés. Nous optimisons vos processus 
                 pour gagner en efficacité.
               </p>
             </div>
@@ -442,7 +442,7 @@ export default function Home() {
           </h2>
 
           <Link to="/contact" className="cta-contact-btn" onClick={() => trackEvent('cta_contact_click', { from: 'home_cta' })}>
-            Prêt à démarrer ?
+            Prêts à démarrer ?
           </Link>
 
           <div className="cta-info">

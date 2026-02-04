@@ -189,7 +189,7 @@ export default function Contact() {
           </h1>
           <p className="page-subtitle">
             Vous avez un projet ? Une idée ? Une question ?<br />
-            Je réponds sous 24h pour discuter de vos besoins.
+            Nous répondons sous 24h pour discuter de vos besoins.
           </p>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function Contact() {
           {/* INFO SIDE */}
           <div className="contact-info">
             <h2 className="info-title">
-              COMMENT ME<br />
+              COMMENT NOUS<br />
               CONTACTER
             </h2>
             
@@ -208,8 +208,8 @@ export default function Contact() {
               <div className="info-item">
                 <div className="info-label">Réponse rapide</div>
                 <div className="info-value">
-                  Je m'engage à vous répondre dans les 24h ouvrées. 
-                  Votre projet mérite toute mon attention.
+                  Nous nous engageons à vous répondre dans les 24h ouvrées. 
+                  Votre projet mérite toute notre attention.
                 </div>
               </div>
               
@@ -243,7 +243,7 @@ export default function Contact() {
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} noValidate>
                 <h3 className="form-title">
-                  Parlez-moi de<br />
+                  Parlez-nous de<br />
                   votre projet
                 </h3>
 
@@ -401,10 +401,10 @@ export default function Contact() {
                     value={formData.description}
                     onChange={handleChange}
                     className={`form-textarea ${errors.description ? 'error' : ''}`}
-                    placeholder="Parlez-moi de votre vision, vos objectifs, vos contraintes..."
+                    placeholder="Parlez-nous de votre vision, vos objectifs, vos contraintes..."
                   />
                   <div className="form-help">
-                    Plus vous serez précis, mieux je pourrai vous aider
+                    Plus vous serez précis, mieux nous pourrons vous aider
                   </div>
                   {errors.description && <div className="error-message">{errors.description}</div>}
                 </div>
@@ -436,7 +436,7 @@ export default function Contact() {
                 <div className="success-icon">✓</div>
                 <h3 className="success-title">Message envoyé !</h3>
                 <p className="success-text">
-                  Merci pour votre message. Je reviendrai vers vous sous 24h 
+                  Merci pour votre message. Nous reviendrons vers vous sous 24h 
                   pour discuter de votre projet.
                 </p>
               </div>

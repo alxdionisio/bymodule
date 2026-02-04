@@ -12,7 +12,7 @@ const servicesData = {
       format: 'Accompagnement',
       niveau: 'Tous niveaux'
     },
-    overview: 'Le Product Management est au cœur de la réussite de tout produit digital. Je vous accompagne dans la définition de votre vision produit, l\'identification des besoins utilisateurs, la priorisation des fonctionnalités et la maximisation de la valeur délivrée. Un accompagnement sur-mesure pour transformer vos idées en produits à succès.',
+    overview: 'Le Product Management est au cœur de la réussite de tout produit digital. Nous vous accompagnons dans la définition de votre vision produit, l\'identification des besoins utilisateurs, la priorisation des fonctionnalités et la maximisation de la valeur délivrée. Un accompagnement sur‑mesure pour transformer vos idées en produits à succès.',
     details: [
       {
         title: 'Vision & Stratégie',
@@ -241,7 +241,7 @@ const servicesData = {
       format: 'Abonnement',
       sla: 'Garanti'
     },
-    overview: 'Votre produit mérite un suivi professionnel. Maintenance corrective, évolutions fonctionnelles, monitoring et support technique. Je veille sur votre application pour que vous puissiez vous concentrer sur votre business.',
+    overview: 'Votre produit mérite un suivi professionnel. Maintenance corrective, évolutions fonctionnelles, monitoring et support technique. Nous veillons sur votre application pour que vous puissiez vous concentrer sur votre activité.',
     details: [
       {
         title: 'Maintenance Corrective',

@@ -314,7 +314,7 @@ export default function Services() {
       {/* CTA FINAL */}
       <section className="final-cta">
         <div className="cta-content">
-          <h2>Prêt à démarrer ?</h2>
+          <h2>Prêts à démarrer ?</h2>
           <p>Discutons de vos besoins et trouvons ensemble <br />la meilleure approche pour votre projet.</p>
           <div className="cta-buttons">
             <Link to="/contact" className="btn-cta-large">Prendre contact</Link>
