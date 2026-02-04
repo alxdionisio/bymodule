@@ -58,7 +58,7 @@ export default function NotFound() {
 
   const copyCode = async () => {
     try {
-      await navigator.clipboard.writeText('MODULE-AUDIT-100');
+      await navigator.clipboard.writeText('MODULE-AUDIT-404');
       trackEvent('404_promo_copy');
     } catch {}
   };
