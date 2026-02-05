@@ -737,6 +737,7 @@
 .cta-text-bg {
   position: absolute;
   bottom: 0;
+  left: 0; /* aligne la fin de l’animation sur le bord gauche en desktop */
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(10rem, 20vw, 20rem);
   color: var(--lime);

@@ -4,16 +4,22 @@ export const projectsData = {
     category: 'ecommerce',
     badge: 'E-commerce',
     title: 'Boutique en ligne\nMaison d\'édition',
-    subtitle: 'Création d\'une boutique e-commerce headless performante sur Shopify Hydrogen avec expérience utilisateur optimisée pour la vente de livres.',
+    subtitle: 'Passage d\'un écosystème éclaté à une plateforme unique "portfolio + e-commerce" sous Shopify Hydrogen, pensée pour vendre et valoriser le catalogue.',
     meta: {
       client: 'Maison d\'édition indépendante',
       durée: '9 mois',
       année: '2025',
       industry: '📚 Édition'
     },
-    overview: 'Ce projet avait pour objectif de moderniser la présence en ligne d\'une maison d\'édition en créant une expérience d\'achat fluide. L\'approche headless avec Shopify Hydrogen permet une flexibilité totale sur le frontend tout en bénéficiant de la puissance de Shopify pour la gestion e-commerce.',
-    challenge: 'La maison d\'édition gérait un catalogue de plus de 500 références avec des variantes complexes (formats, éditions, langues). Le site existant était lent et peu adapté aux mobiles, causant un taux de rebond élevé et des abandons de panier fréquents.',
-    solution: 'Mise en place d\'une architecture headless avec Shopify Hydrogen et React, permettant des performances optimales et une expérience utilisateur fluide. Implémentation d\'un système de recherche et filtrage avancé, avec des pages produits enrichies et un tunnel d\'achat simplifié.',
+    link: 'https://gallmeister.fr/',
+    media: [
+      { src: `${import.meta.env.BASE_URL}images/Gallmeister-BookCard-desktop.png`, alt: 'Gallmeister — Book card (desktop)' },
+      { src: `${import.meta.env.BASE_URL}images/Gallmeister-modale achat-desktop.png`, alt: 'Gallmeister — Modale achat (desktop)' },
+      { src: `${import.meta.env.BASE_URL}images/Gallmeister-Totem-desktop.png`, alt: 'Gallmeister — Totem (desktop)' }
+    ],
+    overview: 'À l\'origine, l\'éditeur ne disposait pas de boutique en ligne et gérait plusieurs sites distincts (institutionnel, collections, auteurs). La stratégie a consisté à regrouper ces présences et à centraliser plus de 700 titres au sein d\'un seul site faisant à la fois office de vitrine (portfolio) et de boutique e‑commerce.',
+    challenge: 'La maison d\'édition ne disposait initialement d\'aucune boutique en ligne et gérait un catalogue de plus de 700 références réparties sur plusieurs sites, avec des variantes complexes (formats, éditions, langues). Les plateformes existantes étaient lentes et peu adaptées au mobile, entraînant un fort taux de rebond.',
+    solution: 'Mise en place d\'une architecture headless avec Shopify Hydrogen et React pour des performances élevées, migration et normalisation de plus de 700 titres, et unification des contenus (collections, auteurs). Implémentation d\'un moteur de recherche et de filtres avancés, de fiches livres enrichies (extraits, métadonnées).',
     techStack: {
       'Frontend': ['React', 'Shopify Hydrogen', 'TypeScript', 'Tailwind CSS'],
       'Backend & CMS': ['Shopify', 'API REST', 'Headless CMS']
@@ -21,14 +27,14 @@ export const projectsData = {
     tags: ['Shopify', 'Shopify Hydrogen', 'React', 'Headless CMS', 'TypeScript', 'Tailwind CSS'],
     features: [
       { title: 'Recherche avancée', desc: 'Système de recherche intelligent avec filtres par genre, auteur, collection, format et prix. Résultats instantanés avec debouncing.' },
-      { title: 'Mobile optimisé', desc: 'Interface responsive avec navigation simplifiée et processus d\'achat optimisé pour mobile. Performance scores >90/100.' },
-      { title: 'Pages enrichies', desc: 'Fiches produits détaillées avec extraits, biographie auteur, recommandations personnalisées et avis clients intégrés.' },
-      { title: 'Performance & SEO', desc: 'Temps de chargement <1.5s, SSR pour le SEO, optimisation images automatique et lazy loading intelligent.' }
+      { title: 'Mobile optimisé', desc: 'Interface responsive avec navigation simplifiée et processus d\'achat optimisé pour mobile. Performance scores >90/100. Le design system a été complètement revu et amélioré.' },
+      { title: 'Pages enrichies', desc: 'Fiches produits détaillées avec extraits, biographie auteur, recommandations personnalisées et avis partenaires intégrés.' },
+      { title: 'Tunnel d’achat optimisé', desc: 'Parcours simple et fluide, achat de livres imprimés et numériques (ebook) en quelques étapes, paiement sécurisé.' }
     ],
     kpis: [
-      { value: '+65%', label: 'Conversion', desc: 'Augmentation du taux de conversion grâce à l\'UX optimisée' },
-      { value: '-40%', label: 'Rebond', desc: 'Réduction drastique du taux de rebond' },
-      { value: '+120%', label: 'CA en ligne', desc: 'Doublement du chiffre d\'affaires en 6 mois' }
+      { value: '700+', label: 'Titres migrés', desc: 'Catalogue centralisé et normalisé sur une même plateforme' },
+      { value: '0→22%', label: 'Ventes en ligne', desc: 'Part des ventes réalisées via l’e‑commerce en 6 mois' },
+      { value: '+48%', label: 'Conversion', desc: 'Tunnel d’achat simplifié (livres imprimés & ebooks)' }
     ]
   },
 
@@ -44,6 +50,14 @@ export const projectsData = {
       année: '2025',
       industry: '🍽️ Restauration'
     },
+    link: '',
+    media: [
+      { src: `${import.meta.env.BASE_URL}images/Spot%20-%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.35.png`, alt: 'Spot — iPhone 17 screenshot (23:21:35)' },
+      { src: `${import.meta.env.BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.27.png`, alt: 'Spot — iPhone 17 simulator (23:21:27)' },
+      { src: `${import.meta.env.BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.39.png`, alt: 'Spot — iPhone 17 simulator (23:21:39)' },
+      { src: `${import.meta.env.BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.44.png`, alt: 'Spot — iPhone 17 simulator (23:21:44)' },
+      { src: `${import.meta.env.BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.49.png`, alt: 'Spot — iPhone 17 simulator (23:21:49)' }
+    ],
     overview: 'Développement d\'une application mobile native permettant aux clients de découvrir les restaurants du groupe, consulter les menus, réserver une table et gérer leurs réservations. Interface intuitive avec géolocalisation et notifications push.',
     challenge: 'Le groupe gérait les réservations manuellement par téléphone, causant des erreurs de planning, des doubles réservations et une perte de temps considérable pour le personnel. Aucune visibilité sur les préférences clients.',
     solution: 'Application React Native avec backend API REST, système de réservation en temps réel, gestion des disponibilités automatisée et profils clients enrichis. Tableau de bord pour les gérants permettant de gérer les réservations et analyser les données.',
@@ -77,14 +91,20 @@ export const projectsData = {
       année: '2025',
       industry: '🥖 Boulangerie'
     },
+    link: '',
+    media: [
+      { src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup dashboard 1' },
+      { src: 'https://images.unsplash.com/photo-1523475496153-3d6cc0f0f6d4?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup workflow 2' },
+      { src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup ERP 3' }
+    ],
     overview: 'Mise en place d\'un système complet d\'automatisation des processus de production, de la réception des commandes à la génération des plans de fabrication, en intégrant l\'ERP existant et les outils de gestion commerciale.',
     challenge: 'L\'atelier recevait des commandes via multiples canaux (email, téléphone, formulaires web), nécessitant une saisie manuelle dans l\'ERP. La génération des plans de production prenait plusieurs heures chaque jour et les erreurs étaient fréquentes.',
     solution: 'Création d\'un portail de commandes centralisé, intégration bidirectionnelle avec l\'ERP via API, automatisation de la génération des plans de production basée sur les stocks, les capacités et les délais. Dashboard temps réel pour le suivi.',
     techStack: {
       'Backend': ['PHP', 'MySQL'],
-      'Intégrations': ['API REST', 'Zapier', 'Make']
+      'Intégrations': ['API REST', 'n8n']
     },
-    tags: ['PHP', 'Zapier', 'Make', 'API REST', 'MySQL'],
+    tags: ['PHP', 'n8n', 'API REST', 'MySQL'],
     features: [
       { title: 'Portail unifié', desc: 'Interface unique pour tous les clients avec validation automatique, calcul de prix et confirmation instantanée.' },
       { title: 'Synchronisation ERP', desc: 'Intégration bidirectionnelle temps réel avec l\'ERP pour la gestion commerciale, comptable et des stocks.' },
@@ -110,6 +130,12 @@ export const projectsData = {
       année: '2025',
       industry: '✈️ Tourisme'
     },
+    link: '',
+    media: [
+      { src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup voyage 1' },
+      { src: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup voyage 2' },
+      { src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup voyage 3' }
+    ],
     overview: 'Création d\'un site vitrine premium pour présenter les destinations, circuits et services d\'une agence de voyages. Focus sur l\'expérience visuelle et la facilité de navigation avec galeries photo immersives.',
     challenge: 'L\'agence perdait des clients face à la concurrence en ligne. Le site existant était obsolète, peu attractif et ne reflétait pas la qualité des voyages proposés.',
     solution: 'Site moderne avec galeries photo immersives, présentation détaillée des destinations, système de recherche avancée et formulaires de contact intelligents avec qualification automatique des demandes.',
@@ -143,6 +169,11 @@ export const projectsData = {
       année: '2026',
       industry: '🏛️ Politique'
     },
+    link: 'https://campagne-municipale.example.com',
+    media: [
+      { src: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup campagne 1' },
+      { src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup campagne 2' }
+    ],
     overview: 'Site de campagne électorale complet avec présentation du programme politique, actualités de campagne et outils d\'engagement citoyen.',
     challenge: 'Besoin de communiquer rapidement sur les propositions et mobiliser les citoyens dans un temps limité avant les élections.',
     solution: 'Site Next.js avec CMS pour publication rapide d\'actualités, section programme interactive et formulaires d\'engagement des bénévoles.',
@@ -176,6 +207,12 @@ export const projectsData = {
       année: '2026',
       industry: '👨‍🍳 Gastronomie'
     },
+    link: '',
+    media: [
+      { src: `${import.meta.env.BASE_URL}images/macuisinesante-homepage.png`, alt: 'MaCuisineSanté — Homepage' },
+      { src: `${import.meta.env.BASE_URL}images/macuisinesante-detail%20recette.png`, alt: 'MaCuisineSanté — Détail recette' },
+      { src: `${import.meta.env.BASE_URL}images/macuisinesante-toutes%20les%20recettes.png`, alt: 'MaCuisineSanté — Toutes les recettes' }
+    ],
     overview: 'Plateforme de partage de recettes gastronomiques avec recherche avancée, filtres multiples et gestion de favoris personnalisés.',
     challenge: 'Organiser et rendre accessible une large collection de recettes avec recherche intuitive par ingrédients, difficulté et temps de préparation.',
     solution: 'Site React avec Strapi CMS headless pour gestion du contenu, système de recherche full-text et filtrage avancé, profils utilisateurs avec favoris.',
@@ -209,6 +246,12 @@ export const projectsData = {
       année: '2025',
       industry: '🏠 Services'
     },
+    link: '',
+    media: [
+      { src: `${import.meta.env.BASE_URL}images/ActionNuisibles13-homepage.png`, alt: 'Action Nuisibles 13 — Homepage' },
+      { src: `${import.meta.env.BASE_URL}images/ActionNuisibles13-contact.png`, alt: 'Action Nuisibles 13 — Contact' },
+      { src: `${import.meta.env.BASE_URL}images/ActionNuisibles13-engagements.png`, alt: 'Action Nuisibles 13 — Engagements' },
+    ],
     overview: 'Site vitrine professionnel pour artisan spécialisé dans l\'éradication de nuisibles avec prise de rendez-vous en ligne et optimisation SEO local.',
     challenge: 'Améliorer la visibilité locale et faciliter la prise de contact avec automatisation de la gestion des demandes d\'intervention.',
     solution: 'Site WordPress optimisé avec plugin de réservation, fiches services détaillées et stratégie SEO local ciblant les villes d\'intervention.',
@@ -242,6 +285,11 @@ export const projectsData = {
       année: '2025-2026',
       industry: '🛠️ Innovation'
     },
+    link: 'https://studio-apps.example.com',
+    media: [
+      { src: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup studio 1' },
+      { src: 'https://images.unsplash.com/photo-1556157381-36b1a7116f6b?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup studio 2' }
+    ],
     overview: 'Projet R&D visant à créer un framework de développement d\'applications mobiles avec templates réutilisables, automatisation des processus et documentation partagée.',
     challenge: 'Réduire le temps de développement d\'applications mobiles similaires et capitaliser sur les bonnes pratiques à travers les projets.',
     solution: 'Framework basé sur React Native avec bibliothèque de composants, générateurs de code, templates d\'architecture et documentation automatisée.',

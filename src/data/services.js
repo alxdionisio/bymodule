@@ -39,9 +39,9 @@ const servicesData = {
       'KPIs & Métriques'
     ],
     pricing: [
-      { label: 'Audit Initial', value: '500€', description: 'Offert si engagement (déduit du devis)' },
-      { label: 'Accompagnement Mensuel', value: '3 500€', description: 'Suivi continu stratégique', featured: true },
-      { label: 'Mission Ponctuelle', value: 'Sur devis', description: 'Workshop ou consultation' }
+      { label: 'Audit initial', value: '800€ – 2 500€', description: 'Diagnostic produit complet (offert si engagement)' },
+      { label: 'Accompagnement mensuel', value: '2 500€ – 5 500€/mois', description: 'Pilotage produit continu', featured: true },
+      { label: 'Sprint stratégie (1–2 sem.)', value: '1 500€ – 3 000€', description: 'Vision, Roadmap, KPIs' }
     ],
     tags: ['Product Management', 'Stratégie', 'UX Research', 'Roadmap'],
     relatedServices: ['dev-web', 'design', 'dev-mobile']
@@ -85,9 +85,9 @@ const servicesData = {
       'Optimisation SEO'
     ],
     pricing: [
-      { label: 'Site Vitrine', value: '4 500€', description: 'Site responsive 5-10 pages' },
-      { label: 'E-commerce', value: '12 000€', description: 'Boutique Shopify complète', featured: true },
-      { label: 'Application Custom', value: 'Sur devis', description: 'Projet complexe sur-mesure' }
+      { label: 'Site vitrine', value: 'À partir de 3 000€', description: 'Site responsive 4–10 pages' },
+      { label: 'E‑commerce', value: 'À partir de 8 000€', description: 'Boutique Shopify/Headless', featured: true },
+      { label: 'Application web (MVP)', value: 'À partir de 12 000€', description: 'App métier sur‑mesure' }
     ],
     tags: ['React', 'Next.js', 'Shopify', 'TypeScript', 'SEO'],
     relatedServices: ['product-management', 'design', 'maintenance']
@@ -131,9 +131,9 @@ const servicesData = {
       'Monitoring crashes'
     ],
     pricing: [
-      { label: 'MVP', value: '12 000€', description: 'Prototype fonctionnel' },
-      { label: 'App Complète', value: '25 000€', description: 'Application production', featured: true },
-      { label: 'Maintenance', value: '600€/mois', description: 'Updates & support' }
+      { label: 'MVP mobile', value: 'À partir de 5 000€', description: 'Prototype fonctionnel' },
+      { label: 'App complète', value: 'À partir de 20 000€', description: 'Prête production', featured: true },
+      { label: 'Maintenance', value: '600€ – 1 200€/mois', description: 'Mises à jour & support' }
     ],
     tags: ['React Native', 'Swift', 'iOS', 'Android', 'Mobile'],
     relatedServices: ['product-management', 'design', 'maintenance']
@@ -148,7 +148,7 @@ const servicesData = {
     meta: {
       durée: '1-3 mois',
       format: 'Mission',
-      outils: 'Zapier, Make, API'
+      outils: 'Zapier, Make, n8n, API'
     },
     overview: 'Automatisez vos tâches répétitives et connectez vos outils pour gagner en productivité. De l\'intégration ERP/CRM aux workflows automatisés, je crée des solutions sur-mesure qui vous font économiser du temps et réduisent les erreurs.',
     details: [
@@ -160,7 +160,7 @@ const servicesData = {
       {
         title: 'Workflows',
         description: 'Automatisation de processus métier complexes',
-        items: ['Zapier/Make', 'Déclencheurs custom', 'Conditions logiques', 'Notifications auto']
+        items: ['Zapier/Make/n8n', 'Déclencheurs custom', 'Conditions logiques', 'Notifications auto']
       },
       {
         title: 'Reporting',
@@ -176,11 +176,11 @@ const servicesData = {
       'Support 2 mois'
     ],
     pricing: [
-      { label: 'Audit', value: '500€', description: 'Offert si engagement (déduit du devis)' },
-      { label: 'Automatisation', value: '3 500€', description: 'Setup workflows complet', featured: true },
-      { label: 'Intégration ERP', value: 'Sur devis', description: 'Projet complexe sur-mesure' }
+      { label: 'Audit', value: '800€ – 2 500€', description: 'Cartographie & quick wins (offert si engagement)' },
+      { label: 'Automatisation', value: '2 000€ – 8 000€', description: 'Workflows Make/Zapier/n8n/Airtable + APIs', featured: true },
+      { label: 'Intégration ERP/CRM', value: 'Sur devis', description: 'Connecteurs & data sync avancés' }
     ],
-    tags: ['Zapier', 'Make', 'API REST', 'Automatisation', 'PHP'],
+    tags: ['Zapier', 'Make', 'n8n', 'API REST', 'Automatisation'],
     relatedServices: ['dev-web', 'maintenance']
   },
 
@@ -222,9 +222,9 @@ const servicesData = {
       'Specs développeurs'
     ],
     pricing: [
-      { label: 'Audit UX', value: '500€', description: 'Offert si engagement (déduit du devis)' },
-      { label: 'Design Complet', value: '4 500€', description: 'Maquettes + prototypes', featured: true },
-      { label: 'Design System', value: '8 000€', description: 'Système complet documenté' }
+      { label: 'Audit UX', value: '800€ – 2 500€', description: 'Évaluation + plan d’actions' },
+      { label: 'Design complet', value: '2 000€ – 6 000€', description: 'Maquettes + prototypes', featured: true },
+      { label: 'Design System', value: '5 000€ – 12 000€', description: 'Bibliothèque & guidelines' }
     ],
     tags: ['Figma', 'UI/UX', 'Design System', 'Prototypage'],
     relatedServices: ['dev-web', 'dev-mobile', 'product-management']
@@ -268,9 +268,9 @@ const servicesData = {
       'Optimisations continues'
     ],
     pricing: [
-      { label: 'Essentiel', value: '400€/mois', description: 'Monitoring + corrections' },
-      { label: 'Business', value: '1 200€/mois', description: 'Tout inclus + évolutions', featured: true },
-      { label: 'Enterprise', value: 'Sur devis', description: 'SLA custom + support 24/7' }
+      { label: 'Essentiel', value: '350€ – 600€/mois', description: 'Monitoring + correctifs' },
+      { label: 'Business', value: '900€ – 1 500€/mois', description: 'Évolutions incluses', featured: true },
+      { label: 'Enterprise', value: 'Sur devis', description: 'SLA & support 24/7' }
     ],
     tags: ['Maintenance', 'Support', 'Monitoring', 'DevOps'],
     relatedServices: ['dev-web', 'dev-mobile', 'automation']
@@ -318,7 +318,7 @@ const servicesData = {
       { label: 'MVP Sur-mesure', value: 'Sur devis', description: 'Après discussions approfondies', featured: true },
       { label: 'Partenariat', value: 'À définir', description: 'Selon modalités de collaboration' }
     ],
-    tags: ['React Native', 'Swift', 'B2B', 'Studio', 'Métier', 'Collaboration'],
+    tags: ['React Native', 'Swift', 'Kotlin', 'Studio', 'Métier', 'Collaboration'],
     relatedServices: ['dev-mobile', 'product-management', 'design']
   },
 
@@ -452,8 +452,8 @@ const servicesData = {
       'Support intégré'
     ],
     pricing: [
-      { label: 'MVP Marketplace', value: '40 000€', description: 'Version initiale fonctionnelle' },
-      { label: 'Plateforme Complète', value: '75 000€', description: 'Toutes fonctionnalités', featured: true },
+      { label: 'MVP Marketplace', value: 'À partir de 40 000€', description: 'Version initiale fonctionnelle' },
+      { label: 'Plateforme Complète', value: 'À partir de 75 000€', description: 'Toutes fonctionnalités', featured: true },
       { label: 'White Label', value: 'Sur devis', description: 'Licence complète personnalisable' }
     ],
     tags: ['Marketplace', 'E-commerce', 'Paiements', 'Commission', 'Rating'],
