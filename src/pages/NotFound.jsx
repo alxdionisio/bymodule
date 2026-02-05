@@ -16,20 +16,16 @@ export default function NotFound() {
   const [modalOpen, setModalOpen] = useState(false);
   const [eggPos, setEggPos] = useState({ top: '70%', left: '80%' });
 
-  // Fixe le footer en bas uniquement sur la 404 et ajuste la hauteur utile
+  // Ajuste la hauteur utile sans footer sticky
   useEffect(() => {
-    document.body.classList.add('notfound-active');
     const adjust = () => {
       const header = document.querySelector('.header');
-      const footer = document.querySelector('.footer');
       const headerH = header ? header.getBoundingClientRect().height : 0;
-      const footerH = footer ? footer.getBoundingClientRect().height : 0;
       if (containerRef.current) {
-        containerRef.current.style.minHeight = `calc(100vh - ${headerH + footerH}px)`;
+        containerRef.current.style.minHeight = `calc(100vh - ${headerH}px)`;
         containerRef.current.style.paddingTop = `${Math.max(24, headerH + 16)}px`;
-        containerRef.current.style.paddingBottom = `${Math.max(32, footerH + 24)}px`;
+        containerRef.current.style.paddingBottom = `48px`;
       }
-      document.documentElement.style.setProperty('--footer-h', `${footerH}px`);
 
       // Place the easter egg at a random position (percentages) within the container.
       if (containerRef.current) {
@@ -44,7 +40,6 @@ export default function NotFound() {
     window.addEventListener('resize', adjust);
     trackEvent('404_view', { path: window.location.pathname });
     return () => {
-      document.body.classList.remove('notfound-active');
       window.removeEventListener('resize', adjust);
     };
   }, []);

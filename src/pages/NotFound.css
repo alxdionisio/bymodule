@@ -47,13 +47,7 @@
 }
 
 /* Footer fixé en bas uniquement lorsque la classe body.notfound-active est présente */
-.notfound-active .footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 900;
-}
+/* Sur la 404, le footer n'est pas sticky pour éviter de masquer le contenu */
 
 /* Easter egg: texte blanc sur fond blanc, cliquable mais discret */
 .notfound-easter-egg {

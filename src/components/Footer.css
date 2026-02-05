@@ -319,6 +319,8 @@ html, body {
   }
   .footer-left,
   .footer-right { display: block; }
+  .logo-img { max-width: 110px; margin: 0 auto 0.25rem; }
+  .footer-brand { margin: 0; }
   .footer-links {
     justify-content: flex-start;
     gap: 1rem;
@@ -346,6 +348,7 @@ html, body {
     padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
   .email-chip { max-width: 100%; overflow-wrap: anywhere; }
+  .logo-img { max-width: 100px; margin: 0 auto 0.2rem; }
   
   .footer-logo {
     height: 28px;
