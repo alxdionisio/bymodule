@@ -228,13 +228,6 @@ export default function Contact() {
                   vos objectifs et votre budget.
                 </div>
               </div>
-              
-              <div className="info-item">
-                <div className="info-label">Me suivre</div>
-                <div className="social-links">
-                  <a href="https://linkedin.com/in/alexdionisio" target="_blank" rel="noopener noreferrer" className="social-link">in</a>
-                </div>
-              </div>
             </div>
           </div>
 

@@ -1,0 +1,35 @@
+.legal .page-hero {
+  padding: 10rem 2rem 4rem;
+  background: var(--black);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.legal .page-hero::before {
+  content: '';
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30rem;
+  color: var(--lime);
+  opacity: 0.08;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+.legal.sitemap .page-hero::before { content: 'PLAN DU SITE'; }
+.legal.mentions .page-hero::before { content: 'MENTIONS LÉGALES'; }
+.legal.privacy .page-hero::before { content: 'CONFIDENTIALITÉ'; }
+.legal .hero-content { max-width: 1600px; margin: 0 auto; text-align: center; position: relative; }
+.legal .breadcrumb { font-size: 0.9rem; margin-bottom: 2rem; font-weight: 600; }
+.legal .breadcrumb a { color: var(--lime); opacity: 0.8; text-decoration: none; }
+.legal .breadcrumb span { margin: 0 0.5rem; opacity: 0.4; }
+.legal .hero-text { max-width: 900px; margin: 0 auto; }
+.legal .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 10vw, 5rem); line-height: 1.1; margin-bottom: 1.2rem; }
+.legal .page-subtitle { font-size: 1.2rem; color: rgba(255,255,255,0.8); }
+.legal .legal-content { padding: 4rem 2rem 6rem; background: var(--white); }
+.legal .container { max-width: 1000px; margin: 0 auto; }
+.legal h2 { margin-top: 2rem; }
+

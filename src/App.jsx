@@ -12,6 +12,9 @@ import { initAnalytics, trackPageView } from './lib/analytics';
 import ConsentBanner from './components/ConsentBanner';
 import NotFound from './pages/NotFound';
 import { useJsonLd, getSiteUrl } from './lib/seo';
+import SitemapPage from './pages/Sitemap';
+import LegalPage from './pages/Legal';
+import PrivacyPage from './pages/Privacy';
 
 export default function App() {
   const { pathname } = useLocation();
@@ -67,6 +70,9 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/service/:id" element={<ServiceDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/plan-du-site" element={<SitemapPage />} />
+          <Route path="/mentions-legales" element={<LegalPage />} />
+          <Route path="/politique-de-confidentialite" element={<PrivacyPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
