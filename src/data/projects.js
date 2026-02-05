@@ -1,3 +1,9 @@
+// Compatible Vite (browser) and Node (scripts): resolve BASE_URL safely
+const BASE_URL = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL)
+  || process.env.BASE_URL
+  || process.env.VITE_BASE_URL
+  || '/';
+
 export const projectsData = {
   'ecommerce-edition': {
     id: 'ecommerce-edition',
@@ -13,9 +19,9 @@ export const projectsData = {
     },
     link: 'https://gallmeister.fr/',
     media: [
-      { src: `${import.meta.env.BASE_URL}images/Gallmeister-BookCard-desktop.png`, alt: 'Gallmeister — Book card (desktop)' },
-      { src: `${import.meta.env.BASE_URL}images/Gallmeister-modale achat-desktop.png`, alt: 'Gallmeister — Modale achat (desktop)' },
-      { src: `${import.meta.env.BASE_URL}images/Gallmeister-Totem-desktop.png`, alt: 'Gallmeister — Totem (desktop)' }
+      { src: `${BASE_URL}images/Gallmeister-BookCard-desktop.png`, alt: 'Gallmeister — Book card (desktop)' },
+      { src: `${BASE_URL}images/Gallmeister-modale achat-desktop.png`, alt: 'Gallmeister — Modale achat (desktop)' },
+      { src: `${BASE_URL}images/Gallmeister-Totem-desktop.png`, alt: 'Gallmeister — Totem (desktop)' }
     ],
     overview: 'À l\'origine, l\'éditeur ne disposait pas de boutique en ligne et gérait plusieurs sites distincts (institutionnel, collections, auteurs). La stratégie a consisté à regrouper ces présences et à centraliser plus de 700 titres au sein d\'un seul site faisant à la fois office de vitrine (portfolio) et de boutique e‑commerce.',
     challenge: 'La maison d\'édition ne disposait initialement d\'aucune boutique en ligne et gérait un catalogue de plus de 700 références réparties sur plusieurs sites, avec des variantes complexes (formats, éditions, langues). Les plateformes existantes étaient lentes et peu adaptées au mobile, entraînant un fort taux de rebond.',
@@ -52,11 +58,11 @@ export const projectsData = {
     },
     link: '',
     media: [
-      { src: `${import.meta.env.BASE_URL}images/Spot%20-%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.35.png`, alt: 'Spot — iPhone 17 screenshot (23:21:35)' },
-      { src: `${import.meta.env.BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.27.png`, alt: 'Spot — iPhone 17 simulator (23:21:27)' },
-      { src: `${import.meta.env.BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.39.png`, alt: 'Spot — iPhone 17 simulator (23:21:39)' },
-      { src: `${import.meta.env.BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.44.png`, alt: 'Spot — iPhone 17 simulator (23:21:44)' },
-      { src: `${import.meta.env.BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.49.png`, alt: 'Spot — iPhone 17 simulator (23:21:49)' }
+      { src: `${BASE_URL}images/Spot%20-%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.35.png`, alt: 'Spot — iPhone 17 screenshot (23:21:35)' },
+      { src: `${BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.27.png`, alt: 'Spot — iPhone 17 simulator (23:21:27)' },
+      { src: `${BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.39.png`, alt: 'Spot — iPhone 17 simulator (23:21:39)' },
+      { src: `${BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.44.png`, alt: 'Spot — iPhone 17 simulator (23:21:44)' },
+      { src: `${BASE_URL}images/Spot%20-%20Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.49.png`, alt: 'Spot — iPhone 17 simulator (23:21:49)' }
     ],
     overview: 'Développement d\'une application mobile native permettant aux clients de découvrir les restaurants du groupe, consulter les menus, réserver une table et gérer leurs réservations. Interface intuitive avec géolocalisation et notifications push.',
     challenge: 'Le groupe gérait les réservations manuellement par téléphone, causant des erreurs de planning, des doubles réservations et une perte de temps considérable pour le personnel. Aucune visibilité sur les préférences clients.',
@@ -209,9 +215,9 @@ export const projectsData = {
     },
     link: '',
     media: [
-      { src: `${import.meta.env.BASE_URL}images/macuisinesante-homepage.png`, alt: 'MaCuisineSanté — Homepage' },
-      { src: `${import.meta.env.BASE_URL}images/macuisinesante-detail%20recette.png`, alt: 'MaCuisineSanté — Détail recette' },
-      { src: `${import.meta.env.BASE_URL}images/macuisinesante-toutes%20les%20recettes.png`, alt: 'MaCuisineSanté — Toutes les recettes' }
+      { src: `${BASE_URL}images/macuisinesante-homepage.png`, alt: 'MaCuisineSanté — Homepage' },
+      { src: `${BASE_URL}images/macuisinesante-detail%20recette.png`, alt: 'MaCuisineSanté — Détail recette' },
+      { src: `${BASE_URL}images/macuisinesante-toutes%20les%20recettes.png`, alt: 'MaCuisineSanté — Toutes les recettes' }
     ],
     overview: 'Plateforme de partage de recettes gastronomiques avec recherche avancée, filtres multiples et gestion de favoris personnalisés.',
     challenge: 'Organiser et rendre accessible une large collection de recettes avec recherche intuitive par ingrédients, difficulté et temps de préparation.',
@@ -248,9 +254,9 @@ export const projectsData = {
     },
     link: '',
     media: [
-      { src: `${import.meta.env.BASE_URL}images/ActionNuisibles13-homepage.png`, alt: 'Action Nuisibles 13 — Homepage' },
-      { src: `${import.meta.env.BASE_URL}images/ActionNuisibles13-contact.png`, alt: 'Action Nuisibles 13 — Contact' },
-      { src: `${import.meta.env.BASE_URL}images/ActionNuisibles13-engagements.png`, alt: 'Action Nuisibles 13 — Engagements' },
+      { src: `${BASE_URL}images/ActionNuisibles13-homepage.png`, alt: 'Action Nuisibles 13 — Homepage' },
+      { src: `${BASE_URL}images/ActionNuisibles13-contact.png`, alt: 'Action Nuisibles 13 — Contact' },
+      { src: `${BASE_URL}images/ActionNuisibles13-engagements.png`, alt: 'Action Nuisibles 13 — Engagements' },
     ],
     overview: 'Site vitrine professionnel pour artisan spécialisé dans l\'éradication de nuisibles avec prise de rendez-vous en ligne et optimisation SEO local.',
     challenge: 'Améliorer la visibilité locale et faciliter la prise de contact avec automatisation de la gestion des demandes d\'intervention.',
