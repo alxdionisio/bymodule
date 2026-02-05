@@ -5,6 +5,7 @@ html, body {
 .footer {
   background: var(--black);
   color: var(--white);
+  padding: 2rem 1.5rem;
 }
 
 .footer-content {
@@ -20,6 +21,7 @@ html, body {
   column-gap: 3rem;
   padding: 2rem 0 0 0;
   align-items: start;
+  margin: 0rem 3rem;
 }
 
 .footer-right {
@@ -87,7 +89,6 @@ html, body {
 .logo-img {
   height: 100%;
   max-width: 150px;
-  margin-left: 1rem;
   width: auto;
   display: block;
   object-fit: contain;
@@ -233,6 +234,7 @@ html, body {
   gap: 1rem;
   padding-top: 0.5rem;
   border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 0rem 3rem;
 }
 
 .socials a {
@@ -302,13 +304,21 @@ html, body {
 @media (max-width: 768px) {
   .footer {
     padding: 1.5rem;
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
   }
   
   .footer-content {
     gap: 2rem;
   }
   .footer-logo { margin: 0; }
-  .footer-panel { text-align: left; }
+  .footer-panel {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .footer-left,
+  .footer-right { display: block; }
   .footer-links {
     justify-content: flex-start;
     gap: 1rem;
@@ -333,7 +343,9 @@ html, body {
 @media (max-width: 480px) {
   .footer {
     padding: 1rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
+  .email-chip { max-width: 100%; overflow-wrap: anywhere; }
   
   .footer-logo {
     height: 28px;
