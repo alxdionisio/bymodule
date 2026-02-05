@@ -181,7 +181,7 @@ export default function ProjectDetail() {
             <div className="content-section">
               <h2 className="section-title">Vue d'ensemble</h2>
               <p className="section-text">{project.overview}</p>
-              {project.link && (
+              {project.link && project.id !== 'app-studio' && (
                 <p style={{ textAlign: 'center' }}>
                   <a
                     href={project.link}
@@ -218,7 +218,7 @@ export default function ProjectDetail() {
           )}
 
           {/* Media carousel (après Défi/Solution) */}
-          {!['automation-bakery', 'travel-agency', 'political-campaign'].includes(project.id) && (
+          {!['automation-bakery', 'travel-agency', 'political-campaign', 'app-studio'].includes(project.id) && (
           <div className="content-section">
             <h2 className="section-title">Aperçu visuel</h2>
             <div className={`project-media ${project.id === 'app-restaurant' ? 'portrait' : ''}`}>
