@@ -1,22 +1,31 @@
 // Centralized visuals management for projects + site DA
-// Reverted to the initial visuals used before changes, while keeping this indirection layer.
+// Uses local curated images for reliable, creative visuals (works in Node + Vite)
 
-export const projectIdToImage = {};
+const BASE_URL =
+  (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL) ||
+  process.env.BASE_URL ||
+  process.env.VITE_BASE_URL ||
+  '/';
 
-// Original sequence used across Home/Projets (kept as-is)
+export const projectIdToImage = {
+  'ecommerce-edition': `${BASE_URL}images/Gallmeister-BookCard-desktop.png`,
+  'app-restaurant': `${BASE_URL}images/Spot%20-%20Screenshot%20-%20iPhone%2017%20-%202026-02-05%20at%2023.21.35.png`,
+  'recipe-website': `${BASE_URL}images/macuisinesante-homepage.png`,
+  'pest-control': `${BASE_URL}images/ActionNuisibles13-homepage.png`,
+};
+
+// Placeholders MacBook Pro (alternating) pour les cartes projets
 const genericPalette = [
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=400&fit=crop'
+  // 1. URL fournie par l'utilisateur
+  'https://images.unsplash.com/photo-1651241680016-cc9e407e7dc3?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  // 2. URL fournie par l'utilisateur
+  'https://images.unsplash.com/photo-1738494610263-4e27d9d4e201?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 ];
 
 export function getImageForProject(projectId, index = 0) {
-  return projectIdToImage[projectId] || genericPalette[index % genericPalette.length];
+  // Toujours alterner entre les 2 visuels partagés pour les cartes preview,
+  // sans utiliser d'images maquettes spécifiques aux projets.
+  return genericPalette[index % genericPalette.length];
 }
 
 export const testimonialsBackground =

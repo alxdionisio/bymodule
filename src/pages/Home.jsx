@@ -103,6 +103,8 @@ export default function Home() {
       animateBackgroundText(projectsTextRef, 'left');
       animateBackgroundText(blogTextRef, 'left');
       animateBackgroundText(ctaTextRef, 'left');
+
+      // (removed about-circle animation per new spec)
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -238,9 +240,9 @@ export default function Home() {
         <div className="about-grid">
           <div className="about-image">
             <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" 
-              alt="Équipe en réunion"
-              className="about-img"
+              src={`https://images.unsplash.com/photo-1742783199458-aa2ec62ae5f5?q=80&w=3115&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`} 
+              alt="Aperçu créatif — studio byModule"
+              className="about-img about-img-graphic"
               loading="lazy"
               decoding="async"
               width="800"

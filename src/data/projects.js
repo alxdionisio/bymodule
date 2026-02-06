@@ -99,9 +99,9 @@ export const projectsData = {
     },
     link: '',
     media: [
-      { src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup dashboard 1' },
-      { src: 'https://images.unsplash.com/photo-1523475496153-3d6cc0f0f6d4?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup workflow 2' },
-      { src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup ERP 3' }
+      { src: 'https://source.unsplash.com/1600x900/?automation,workflow,neon', alt: 'Automatisation — workflow futuriste' },
+      { src: 'https://source.unsplash.com/1600x900/?dashboard,data,visualization,futuristic', alt: 'Dashboard — data viz créative' },
+      { src: 'https://source.unsplash.com/1600x900/?factory,robotics,abstract', alt: 'Intégrations — robotics/abstract' }
     ],
     overview: 'Mise en place d\'un système complet d\'automatisation des processus de production, de la réception des commandes à la génération des plans de fabrication, en intégrant l\'ERP existant et les outils de gestion commerciale.',
     challenge: 'L\'atelier recevait des commandes via multiples canaux (email, téléphone, formulaires web), nécessitant une saisie manuelle dans l\'ERP. La génération des plans de production prenait plusieurs heures chaque jour et les erreurs étaient fréquentes.',
@@ -138,9 +138,9 @@ export const projectsData = {
     },
     link: '',
     media: [
-      { src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup voyage 1' },
-      { src: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup voyage 2' },
-      { src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup voyage 3' }
+      { src: 'https://source.unsplash.com/1600x900/?travel,adventure,drone,aerial', alt: 'Aventure — drone/aerial' },
+      { src: 'https://source.unsplash.com/1600x900/?ocean,island,gradient', alt: 'Océan — horizons modernes' },
+      { src: 'https://source.unsplash.com/1600x900/?desert,road,explore', alt: 'Itinéraire — route & exploration' }
     ],
     overview: 'Création d\'un site vitrine premium pour présenter les destinations, circuits et services d\'une agence de voyages. Focus sur l\'expérience visuelle et la facilité de navigation avec galeries photo immersives.',
     challenge: 'L\'agence perdait des clients face à la concurrence en ligne. Le site existant était obsolète, peu attractif et ne reflétait pas la qualité des voyages proposés.',
@@ -177,8 +177,8 @@ export const projectsData = {
     },
     link: 'https://campagne-municipale.example.com',
     media: [
-      { src: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup campagne 1' },
-      { src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup campagne 2' }
+      { src: 'https://source.unsplash.com/1600x900/?community,city,night,lights', alt: 'Communauté — ville & lumières' },
+      { src: 'https://source.unsplash.com/1600x900/?microphone,stage,neon', alt: 'Engagement — scène & micro' }
     ],
     overview: 'Site de campagne électorale complet avec présentation du programme politique, actualités de campagne et outils d\'engagement citoyen.',
     challenge: 'Besoin de communiquer rapidement sur les propositions et mobiliser les citoyens dans un temps limité avant les élections.',
@@ -293,8 +293,9 @@ export const projectsData = {
     },
     link: 'https://studio-apps.example.com',
     media: [
-      { src: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup studio 1' },
-      { src: 'https://images.unsplash.com/photo-1556157381-36b1a7116f6b?w=1600&auto=format&fit=crop&q=60', alt: 'Mockup studio 2' }
+      { src: 'https://source.unsplash.com/1600x900/?ui,ux,prototype,neon', alt: 'UI/UX — prototypes néon' },
+      { src: 'https://source.unsplash.com/1600x900/?code,terminal,glow', alt: 'Code — terminal lumineux' },
+      { src: 'https://source.unsplash.com/1600x900/?app,smartphone,3d', alt: 'Apps — smartphone 3D' }
     ],
     overview: 'Projet R&D visant à créer un framework de développement d\'applications mobiles avec templates réutilisables, automatisation des processus et documentation partagée.',
     challenge: 'Réduire le temps de développement d\'applications mobiles similaires et capitaliser sur les bonnes pratiques à travers les projets.',
