@@ -3,13 +3,13 @@ import './Legal.css';
 
 export default function PrivacyPage() {
   useSEO({
-    title: 'Politique de confidentialité — Module',
-    description: 'Informations sur la collecte, l\'utilisation et la protection des données personnelles sur byModule.',
+    title: 'Politique de confidentialité — Module | Marseille, PACA',
+    description: 'Collecte, utilisation et protection des données personnelles. Module — développement web, product management à Marseille, Aix-en-Provence, PACA.',
     canonicalPath: '/politique-de-confidentialite',
   });
   useOpenGraph({
-    title: 'Politique de confidentialité — Module',
-    description: 'Collecte et traitement des données personnelles.',
+    title: 'Politique de confidentialité — Module Marseille, PACA',
+    description: 'Protection des données personnelles. Module — Marseille, PACA.',
     path: '/politique-de-confidentialite',
   });
   const siteUrl = getSiteUrl();

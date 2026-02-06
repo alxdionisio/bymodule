@@ -5,14 +5,14 @@ import { useSEO, useJsonLd, getSiteUrl, useOpenGraph } from '../lib/seo';
 
 export default function Contact() {
   useSEO({
-    title: "Contact — Module",
+    title: "Contact — Développement web & Product Management à Marseille, PACA | Module",
     description:
-      "Parlez-nous de votre projet. Réponse sous 24h pour construire la solution adaptée à vos besoins.",
+      "Contactez Module pour votre projet web, mobile ou product management. Marseille, Aix-en-Provence, PACA, Côte Bleue, Sausset-les-Pins, Carry-le-Rouet. Réponse sous 24h.",
     canonicalPath: "/contact",
   });
   useOpenGraph({
-    title: "Contact — Module",
-    description: "Parlez-nous de votre projet. Réponse sous 24h.",
+    title: "Contact — Module | Marseille, PACA, Côte Bleue",
+    description: "Projet développement web, product management ou application mobile ? Contactez-nous. Marseille, Aix-en-Provence, PACA. Réponse sous 24h.",
     path: "/contact"
   });
   const siteUrl = getSiteUrl();

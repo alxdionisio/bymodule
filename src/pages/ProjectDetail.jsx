@@ -16,13 +16,13 @@ export default function ProjectDetail() {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useSEO({
-    title: project ? `${project.title.replace(/\n/g, ' ')} — Projet — Module` : 'Projet — Module',
-    description: project?.subtitle || 'Détail du projet et résultats.',
+    title: project ? `${project.title.replace(/\n/g, ' ')} — Projet — Module | Marseille, PACA` : 'Projet — Module',
+    description: project ? `${project.subtitle} Développement web, apps, automatisation. Marseille, Aix-en-Provence, PACA, Côte Bleue.` : 'Détail du projet. Module — Marseille, PACA.',
     canonicalPath: project ? `/project/${project.id}` : undefined,
   });
   useOpenGraph({
-    title: project ? `${project.title.replace(/\n/g, ' ')} — Projet — Module` : 'Projet — Module',
-    description: project?.subtitle || 'Détail du projet et résultats.',
+    title: project ? `${project.title.replace(/\n/g, ' ')} — Module Marseille, PACA` : 'Projet — Module',
+    description: project?.subtitle || 'Projet développement web, apps. Marseille, PACA.',
     path: project ? `/project/${project.id}` : undefined
   });
   const siteUrl = getSiteUrl();
@@ -43,11 +43,12 @@ export default function ProjectDetail() {
       description: project.subtitle,
       url: `${siteUrl}/project/${project.id}`,
       about: project.badge,
-      keywords: project.tags?.join(', '),
+      keywords: [project.tags?.join(', '), 'Marseille', 'PACA', 'développement web', 'product management'].filter(Boolean).join(', '),
       image: (project.media?.map(m => m.src) ?? []).slice(0, 6),
       sameAs: project.link ? [project.link] : undefined,
       inLanguage: 'fr-FR',
-      author: { '@type': 'Organization', name: 'Module', url: siteUrl }
+      author: { '@type': 'Organization', name: 'Module', url: siteUrl },
+      spatialCoverage: [{ '@type': 'Place', name: 'Marseille' }, { '@type': 'Place', name: 'PACA' }]
     });
   }
 

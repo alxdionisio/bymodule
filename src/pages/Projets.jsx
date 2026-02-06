@@ -11,16 +11,16 @@ export default function Portfolio() {
   const [searchParams, setSearchParams] = useSearchParams();
   const hasSearch = !!(searchParams.get('tags') || searchParams.get('q'));
   useSEO({
-    title: "Projets — Module",
+    title: "Projets — Développement web, apps & automatisation | Module Marseille PACA",
     description:
-      "Découvrez une sélection de projets web, mobile et d’automatisation réalisés pour nos clients.",
+      "Portfolio : développement web, e-commerce, apps mobiles, automatisation. Marseille, Aix-en-Provence, PACA, Côte Bleue.",
     canonicalPath: hasSearch ? "/projets" : `/projets${location.search || ''}`,
     robots: hasSearch ? "noindex,follow" : undefined,
   });
   useOpenGraph({
-    title: "Projets — Module",
+    title: "Projets — Développement web, apps & automatisation | Module Marseille PACA",
     description:
-      "Découvrez une sélection de projets web, mobile et d’automatisation réalisés pour nos clients.",
+      "Portfolio : développement web, e-commerce, apps mobiles, automatisation. Marseille, Aix-en-Provence, PACA, Côte Bleue.",
     path: "/projets"
   });
   const siteUrl = getSiteUrl();

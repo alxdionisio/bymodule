@@ -4,13 +4,13 @@ import './Legal.css';
 
 export default function SitemapPage() {
   useSEO({
-    title: 'Plan du site — Module',
-    description: 'Navigation complète du site byModule: pages, services, projets et contact.',
+    title: 'Plan du site — Module | Marseille, PACA',
+    description: 'Plan du site Module : développement web, product management, services, projets, contact. Marseille, Aix-en-Provence, PACA, Côte Bleue.',
     canonicalPath: '/plan-du-site',
   });
   useOpenGraph({
-    title: 'Plan du site — Module',
-    description: 'Navigation complète du site byModule.',
+    title: 'Plan du site — Module Marseille, PACA',
+    description: 'Navigation : services, projets, contact. Module — Marseille, PACA.',
     path: '/plan-du-site',
   });
   const siteUrl = getSiteUrl();

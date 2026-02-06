@@ -42,11 +42,12 @@
   justify-content: center;
   pointer-events: none;
   inset: 0;
+  z-index: 0;
 }
 
 .hero-text-bg {
   position: absolute;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(10rem, 45vw, 55rem);
   color: var(--lime);
   opacity: 1;
@@ -55,7 +56,21 @@
   z-index: 0;
   pointer-events: none;
   text-transform: lowercase;
-  animation: heroTextFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: heroTextFade 1.2s var(--ease-out-expo) forwards;
+}
+
+/* "Module" reste figé au scroll, légèrement descendu pour ne pas être coupé par le header */
+.hero-text-bg-fixed {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: none;
+  will-change: opacity;
 }
 
 @keyframes heroTextFade {
@@ -78,37 +93,47 @@
 }
 
 .hero-title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(2.5rem, 8vw, 5.5rem);
   line-height: 1;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
   letter-spacing: -0.02em;
+}
+
+.hero-title-parallax {
+  /* Transform et opacity des .title-line pilotés par JS au scroll */
 }
 
 .title-line {
   display: block;
-  opacity: 0;
-  animation: titleLineAnim 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.title-line:nth-child(1) { animation-delay: 0.3s; }
-.title-line:nth-child(2) { animation-delay: 0.5s; }
-.title-line:nth-child(3) { animation-delay: 0.7s; }
-
-@keyframes titleLineAnim {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 1;
+  will-change: transform;
 }
 
 .title-highlight {
   color: var(--black);
   background-color: var(--lime);
+}
+
+/* Stats fixes sous le texte "Module" (titre H1 glisse au scroll), disparition progressive au scroll */
+.hero-stats-fixed {
+  position: fixed;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.25s ease-out;
+}
+
+.hero-stats-fixed .stat-badge,
+.hero-stats-fixed .stat-separator {
+  pointer-events: auto;
 }
 
 .hero-stats {
@@ -120,9 +145,8 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin-top: 8rem;
-  opacity: 0;
-  animation: statsAnim 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.9s;
+  opacity: 1;
+  animation: statsAnim 0.8s var(--ease-out-expo) forwards 0.5s;
 }
 
 @keyframes statsAnim {
@@ -907,21 +931,60 @@
    RESPONSIVE - MOBILE
    ====================================== */
 @media (max-width: 768px) {
-  /* HERO */
+  /* HERO - H1 et Module alignés horizontalement, l'un sur l'autre */
   .hero-crafto {
     min-height: auto;
-    padding: 8rem 1.5rem 4rem;
+    padding: 8rem 1.5rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
   }
 
-  .hero-text-bg {
-    font-size: 15rem;
-    margin-top: -4rem;
+  .hero-content {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-title-parallax {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-background {
+    order: 2;
+    width: 100%;
+    min-height: 0;
+    margin-top: 3.5rem;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-text-bg,
+  .hero-text-bg-fixed {
+    position: relative;
+    inset: auto;
+    font-size: 12rem;
+    margin-top: 0;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Stats : au-dessus de l'image About au scroll, légèrement descendues (2rem) */
+  .hero-stats-fixed {
+    position: absolute;
+    bottom: 0rem;
   }
 
   .hero-stats {
-    flex-direction: column;
     gap: 1rem;
-    margin-top: 4rem;
   }
 
   .stat-separator {

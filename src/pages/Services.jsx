@@ -6,14 +6,14 @@ import { useSEO, useJsonLd, getSiteUrl, useOpenGraph } from '../lib/seo';
 
 export default function Services() {
   useSEO({
-    title: "Services — Module",
+    title: "Services — Développement web, Product Management, apps | Module Marseille PACA",
     description:
-      "Stratégie produit, développement web & mobile, automatisation et formation. Des services complets pour réussir vos projets.",
+      "Product management, développement web, applications mobiles, UX/UI design, automatisation, formation. Marseille, Aix-en-Provence, PACA, Côte Bleue, Sausset-les-Pins, Carry-le-Rouet.",
     canonicalPath: "/services",
   });
   useOpenGraph({
-    title: "Services — Module",
-    description: "Stratégie produit, développement web & mobile, automatisation et formation.",
+    title: "Services — Dev web, Product Management, apps | Module Marseille, PACA",
+    description: "Product management, développement web, mobile, UX/UI, automatisation, formation. Marseille, Aix-en-Provence, PACA, Côte Bleue.",
     path: "/services"
   });
   const siteUrl = getSiteUrl();

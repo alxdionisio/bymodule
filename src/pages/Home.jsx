@@ -8,15 +8,15 @@ import { getImageForProject, getFallbackImage } from '../data/media';
 
 export default function Home() {
   useSEO({
-    title: "Module — Outils numériques pour propulser votre business",
+    title: "Module — Développement web & Product Management à Marseille, PACA",
     description:
-      "Studio web & mobile: sites, apps, automatisation. Projets récents, témoignages et services pour accélérer votre activité.",
+      "Studio de développement web, product management et applications mobiles à Marseille, Aix-en-Provence, PACA, Côte Bleue. Sites, apps, automatisation, UX/UI design. Sausset-les-Pins, Carry-le-Rouet.",
     canonicalPath: "/",
   });
   useOpenGraph({
-    title: "Module — Outils numériques pour propulser votre business",
+    title: "Module — Développement web & Product Management à Marseille, PACA",
     description:
-      "Studio web & mobile: sites, apps, automatisation. Projets récents, témoignages et services pour accélérer votre activité.",
+      "Développement web, product management, applications mobiles à Marseille, Aix-en-Provence, PACA, Côte Bleue. Sites, apps, automatisation.",
     path: "/"
   });
   const siteUrl = getSiteUrl();
@@ -37,6 +37,10 @@ export default function Home() {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   
+  const heroRef = useRef(null);
+  const heroTextBgRef = useRef(null);
+  const heroStatsRef = useRef(null);
+  const titleLineRefs = useRef([null, null, null]);
   const projectsRef = useRef(null);
   const aboutTextRef = useRef(null);
   const projectsTextRef = useRef(null);
@@ -64,35 +68,80 @@ export default function Home() {
     }
   ];
 
-  // Scroll progress for projects grid
+  // Hero parallax: "Module" fixe, H1 se dispatch et glisse vers About au scroll
   useEffect(() => {
-    const handleScroll = () => {
-      if (!projectsRef.current) return;
+    const hero = heroRef.current;
+    const moduleEl = heroTextBgRef.current;
+    const lines = titleLineRefs.current;
+    const windowHeight = window.innerHeight;
+    const parallaxRange = windowHeight * 1.2; // zone de scroll sur laquelle l'effet s'applique
 
-      const element = projectsRef.current;
-      const rect = element.getBoundingClientRect();
-      const elementTop = rect.top;
-      const elementHeight = rect.height;
-      const windowHeight = window.innerHeight;
+    const updateHeroParallax = () => {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const scrollY = window.scrollY;
+      const progress = reducedMotion ? 0 : Math.min(1, Math.max(0, scrollY / parallaxRange));
 
-      if (elementTop <= windowHeight && elementTop + elementHeight >= 0) {
-        const progress = Math.min(
-          1,
-          Math.max(0, (windowHeight - elementTop) / (windowHeight + elementHeight / 2))
-        );
-        setScrollProgress(progress);
+      // "Module" reste fixe, on le fade out quand on sort de la hero
+      if (moduleEl) {
+        moduleEl.style.opacity = String(Math.max(0, 1 - progress * 1.2));
       }
 
-      // Animated background texts
+      // Stats : disparition dès le début du scroll (effet progressif)
+      const statsEl = heroStatsRef.current;
+      if (statsEl) {
+        const statsOpacity = Math.max(0, 1 - progress * 8);
+        statsEl.style.opacity = String(statsOpacity);
+        statsEl.style.pointerEvents = statsOpacity <= 0.01 ? 'none' : 'auto';
+      }
+
+      // Chaque ligne du H1 glisse vers le bas avec un décalage (dispatch) — seulement si scroll > 0
+      const offsets = [0.55, 0.75, 1]; // facteurs de déplacement par ligne (effet dispatch)
+      lines.forEach((el, i) => {
+        if (!el) return;
+        if (progress < 0.01) {
+          el.style.transform = '';
+          el.style.opacity = '';
+          return;
+        }
+        const y = progress * windowHeight * offsets[i];
+        const opacity = Math.max(0, 1 - progress * 1.15);
+        el.style.transform = `translateY(${y}px)`;
+        el.style.opacity = String(opacity);
+      });
+    };
+
+    window.addEventListener('scroll', updateHeroParallax, { passive: true });
+    updateHeroParallax();
+    return () => window.removeEventListener('scroll', updateHeroParallax);
+  }, []);
+
+  // Scroll progress for projects grid + animated background texts
+  useEffect(() => {
+    const handleScroll = () => {
+      if (projectsRef.current) {
+        const element = projectsRef.current;
+        const rect = element.getBoundingClientRect();
+        const elementTop = rect.top;
+        const elementHeight = rect.height;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop <= windowHeight && elementTop + elementHeight >= 0) {
+          const progress = Math.min(
+            1,
+            Math.max(0, (windowHeight - elementTop) / (windowHeight + elementHeight / 2))
+          );
+          setScrollProgress(progress);
+        }
+      }
+
       const animateBackgroundText = (ref, direction) => {
         if (!ref.current) return;
         const rect = ref.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        
         if (rect.top < windowHeight && rect.bottom > 0) {
           const progress = Math.min(1, Math.max(0, (windowHeight - rect.top) / windowHeight));
-          const translateX = direction === 'left' 
-            ? -100 + (progress * 100) 
+          const translateX = direction === 'left'
+            ? -100 + (progress * 100)
             : 100 - (progress * 100);
           ref.current.style.transform = `translateX(${translateX}%)`;
           ref.current.style.opacity = progress;
@@ -103,8 +152,6 @@ export default function Home() {
       animateBackgroundText(projectsTextRef, 'left');
       animateBackgroundText(blogTextRef, 'left');
       animateBackgroundText(ctaTextRef, 'left');
-
-      // (removed about-circle animation per new spec)
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -203,20 +250,21 @@ export default function Home() {
   return (
     <div className="home-crafto">
 
-      {/* HERO - CRAFTO STYLE */}
-      <section className="hero-crafto entrance-animation">
-        <div className="hero-background">
-          <div className="hero-text-bg">Module</div>
+      {/* HERO - Titre visible dès le début, flottant ; parallax au scroll */}
+      <section ref={heroRef} className="hero-crafto hero-parallax">
+        <div className="hero-background" aria-hidden="true">
+          <div ref={heroTextBgRef} className="hero-text-bg hero-text-bg-fixed">Module</div>
         </div>
 
         <div className="hero-content">
-          <h1 className="hero-title">
-            <span className="title-line">Des outils numériques</span>
-            <span className="title-line">pour propulser</span>
-            <span className="title-line">votre business</span>
+          <h1 className="hero-title hero-title-parallax">
+            <span ref={(el) => { titleLineRefs.current[0] = el; }} className="title-line">Des outils numériques</span>
+            <span ref={(el) => { titleLineRefs.current[1] = el; }} className="title-line">pour propulser</span>
+            <span ref={(el) => { titleLineRefs.current[2] = el; }} className="title-line">votre business</span>
           </h1>
+        </div>
 
-          <div className="hero-stats">
+        <div ref={heroStatsRef} className="hero-stats hero-stats-fixed">
             <div className="stat-badge">
               <span className="stat-icon">●</span>
               <span>10+ PROJETS LIVRÉS PAR AN</span>
@@ -232,7 +280,6 @@ export default function Home() {
               <span>UN ESPACE DE FORMATION</span>
             </div>
           </div>
-        </div>
       </section>
 
       {/* ABOUT SECTION */}

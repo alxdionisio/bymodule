@@ -38,13 +38,13 @@ export default function ServiceDetail() {
     .slice(0, 3);
 
   useSEO({
-    title: `${service.title} — Service — Module`,
-    description: service.subtitle || 'Détail du service et prestations.',
+    title: `${service.title} — Service — Module | Marseille, PACA`,
+    description: service.subtitle ? `${service.subtitle} Marseille, Aix-en-Provence, PACA, Côte Bleue, Sausset-les-Pins, Carry-le-Rouet.` : 'Prestations développement web, product management, apps. Marseille, PACA.',
     canonicalPath: `/service/${service.id}`,
   });
   useOpenGraph({
-    title: `${service.title} — Service — Module`,
-    description: service.subtitle || 'Détail du service et prestations.',
+    title: `${service.title} — Module Marseille, PACA`,
+    description: service.subtitle || 'Service développement web, product management, apps. Marseille, PACA.',
     path: `/service/${service.id}`
   });
   const siteUrl = getSiteUrl();
@@ -64,7 +64,14 @@ export default function ServiceDetail() {
     description: service.subtitle || service.overview,
     serviceType: service.badge,
     url: `${siteUrl}/service/${service.id}`,
-    areaServed: { '@type': 'Country', name: 'France' },
+    areaServed: [
+      { '@type': 'City', name: 'Marseille' },
+      { '@type': 'City', name: 'Aix-en-Provence' },
+      { '@type': 'AdministrativeArea', name: 'PACA' },
+      { '@type': 'Place', name: 'Côte Bleue' },
+      { '@type': 'City', name: 'Sausset-les-Pins' },
+      { '@type': 'City', name: 'Carry-le-Rouet' }
+    ],
     provider: { '@type': 'Organization', name: 'Module', url: siteUrl },
     offers: (service.pricing || [])
       .map((p) => {

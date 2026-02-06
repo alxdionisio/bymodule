@@ -6,8 +6,8 @@ import { trackEvent } from '../lib/analytics';
 
 export default function NotFound() {
   useSEO({
-    title: 'Page introuvable — Module',
-    description: "La page que vous cherchez n'existe pas ou a été déplacée.",
+    title: 'Page introuvable — Module | Marseille, PACA',
+    description: "Page introuvable. Retour à l'accueil : Module — développement web, product management à Marseille, Aix-en-Provence, PACA.",
     canonicalPath: '/404',
     robots: 'noindex, nofollow',
   });

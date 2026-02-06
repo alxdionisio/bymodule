@@ -3,13 +3,13 @@ import './Legal.css';
 
 export default function LegalPage() {
   useSEO({
-    title: 'Mentions légales — Module',
-    description: 'Mentions légales du site byModule: éditeur, hébergeur, contact.',
+    title: 'Mentions légales — Module | Marseille, PACA',
+    description: 'Mentions légales du site Module : éditeur, hébergeur, contact. Développement web, product management à Marseille, Aix-en-Provence, PACA.',
     canonicalPath: '/mentions-legales',
   });
   useOpenGraph({
-    title: 'Mentions légales — Module',
-    description: 'Éditeur, hébergeur et informations légales.',
+    title: 'Mentions légales — Module Marseille, PACA',
+    description: 'Éditeur, hébergeur et informations légales. Module — développement web, product management, Marseille, PACA.',
     path: '/mentions-legales',
   });
   const siteUrl = getSiteUrl();
