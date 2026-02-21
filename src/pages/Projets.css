@@ -132,6 +132,7 @@
   min-width: 18px;
   height: 18px;
   background: var(--black);
+  color: var(--lime);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -543,18 +544,34 @@
   height: 320px;
   overflow: hidden;
   background: var(--gray);
+  border-radius: 12px 12px 0 0;
+}
+
+/* Légère surcouche en dégradé pour lier image et overlay des tags */
+.project-image-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.15) 0%, transparent 40%);
+  pointer-events: none;
 }
 
 .project-image-placeholder {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  object-position: center;
+  filter: grayscale(70%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  /* Rendu net, couche GPU pour éviter le flou */
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .project-card-link:hover .project-image-placeholder {
-  transform: scale(1.05);
+  transform: scale(1.04) translateZ(0);
   filter: grayscale(0%);
 }
 
@@ -749,6 +766,47 @@
 }
 
 @media (max-width: 768px) {
+  .page-hero {
+    padding: 8rem 1.5rem 3.5rem;
+    min-height: 0;
+  }
+
+  .page-hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .page-hero .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .page-hero::before {
+    font-size: 14rem;
+    top: 60%;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    margin-bottom: 0;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+    margin: 0;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+
   .filter-toggle-btn {
     top: 140px;
     left: 1rem;
@@ -778,7 +836,30 @@
 
 @media (max-width: 480px) {
   .page-hero {
-    padding: 8rem 1.5rem 3rem;
+    padding-top: max(7rem, calc(env(safe-area-inset-top, 0px) + 5rem));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+    padding-bottom: 3rem;
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  }
+
+  .page-hero::before {
+    font-size: 9rem;
+    top: 55%;
+  }
+
+  .page-title {
+    font-size: clamp(2.25rem, 14vw, 3.5rem);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .breadcrumb {
+    margin-bottom: 1.25rem;
   }
 
   .filter-toggle-btn {

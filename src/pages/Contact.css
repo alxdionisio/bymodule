@@ -22,6 +22,10 @@
   z-index: 0;
 }
 
+.contact .page-hero .hero-content {
+  text-align: center;
+}
+
 .hero-content {
   max-width: 1600px;
   margin: 0 auto;
@@ -47,6 +51,11 @@
   font-size: clamp(3rem, 12vw, 8rem);
   line-height: 0.9;
   margin-bottom: 1.5rem;
+}
+
+.contact .page-hero .page-subtitle {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-subtitle {
@@ -326,6 +335,73 @@
 .success-text {
   font-size: 1.2rem;
   opacity: 0.8;
+}
+
+/* RESPONSIVE - Hero mobile */
+@media (max-width: 768px) {
+  .contact .page-hero {
+    padding: 8rem 1.5rem 3.5rem;
+    min-height: 0;
+  }
+
+  .contact .page-hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .contact .page-hero::before {
+    font-size: 14rem;
+    top: 60%;
+  }
+
+  .contact .page-hero .page-title {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+    margin-bottom: 0;
+  }
+
+  .contact .page-hero .page-subtitle {
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+    margin: 0;
+  }
+
+  .contact .page-hero .page-tag {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact .page-hero {
+    padding-top: max(7rem, calc(env(safe-area-inset-top, 0px) + 5rem));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+    padding-bottom: 3rem;
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  }
+
+  .contact .page-hero::before {
+    font-size: 9rem;
+    top: 55%;
+  }
+
+  .contact .page-hero .page-title {
+    font-size: clamp(2.25rem, 14vw, 3.5rem);
+    line-height: 0.95;
+    margin-bottom: 1rem;
+  }
+
+  .contact .page-hero .page-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .contact .page-hero .page-tag {
+    font-size: 0.8rem;
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
 }
 
 /* RESPONSIVE */

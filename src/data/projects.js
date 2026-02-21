@@ -99,9 +99,9 @@ export const projectsData = {
     },
     link: '',
     media: [
-      { src: 'https://source.unsplash.com/1600x900/?automation,workflow,neon', alt: 'Automatisation — workflow futuriste' },
-      { src: 'https://source.unsplash.com/1600x900/?dashboard,data,visualization,futuristic', alt: 'Dashboard — data viz créative' },
-      { src: 'https://source.unsplash.com/1600x900/?factory,robotics,abstract', alt: 'Intégrations — robotics/abstract' }
+      { src: 'https://images.unsplash.com/photo-1509449609593-2c0043de0c4e?w=800&q=80&fit=crop', alt: 'Boulangerie, pain — production automatisée' },
+      { src: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&fit=crop', alt: 'Atelier, production — boulangerie' },
+      { src: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80&fit=crop', alt: 'Plan de travail — automatisation' }
     ],
     overview: 'Mise en place d\'un système complet d\'automatisation des processus de production, de la réception des commandes à la génération des plans de fabrication, en intégrant l\'ERP existant et les outils de gestion commerciale.',
     challenge: 'L\'atelier recevait des commandes via multiples canaux (email, téléphone, formulaires web), nécessitant une saisie manuelle dans l\'ERP. La génération des plans de production prenait plusieurs heures chaque jour et les erreurs étaient fréquentes.',
@@ -129,7 +129,7 @@ export const projectsData = {
     category: 'website',
     badge: 'Site Vitrine',
     title: 'Agence de voyages',
-    subtitle: 'Site institutionnel moderne avec catalogue de destinations, système de recherche et formulaires de contact personnalisés.',
+    subtitle: 'Site institutionnel avec système de contact, prise de rendez-vous automatisée et mise en avant détaillée des offres pour faciliter les échanges et les réservations.',
     meta: {
       client: 'Agence de voyages locale',
       durée: '2 mois',
@@ -138,22 +138,23 @@ export const projectsData = {
     },
     link: '',
     media: [
-      { src: 'https://source.unsplash.com/1600x900/?travel,adventure,drone,aerial', alt: 'Aventure — drone/aerial' },
-      { src: 'https://source.unsplash.com/1600x900/?ocean,island,gradient', alt: 'Océan — horizons modernes' },
-      { src: 'https://source.unsplash.com/1600x900/?desert,road,explore', alt: 'Itinéraire — route & exploration' }
+      { src: `${BASE_URL}images/attitude-voyages-page-contact-formulaire-rdv.png`, alt: 'Agence de voyages — Page contact, formulaire et prise de rendez-vous en ligne' },
+      { src: `${BASE_URL}images/attitude-voyages-page-destinations-offres-voyage.png`, alt: 'Agence de voyages — Page destinations, offres Sri Lanka et Albanie' },
+      { src: `${BASE_URL}images/attitude-voyages-page-a-propos-agence-voyage.png`, alt: 'Agence de voyages — Page à propos, notre histoire et engagements' },
+      { src: `${BASE_URL}images/attitude-voyages-offre-circuit-sri-lanka-eveil-des-sens.png`, alt: 'Agence de voyages — Offre détaillée circuit Sri Lanka Éveil des sens' }
     ],
-    overview: 'Création d\'un site vitrine premium pour présenter les destinations, circuits et services d\'une agence de voyages. Focus sur l\'expérience visuelle et la facilité de navigation avec galeries photo immersives.',
+    overview: 'Création d\'un site vitrine premium pour présenter les destinations, circuits et services d\'une agence de voyages. Mise en place d\'un système de contact avec prise de rendez-vous automatisée pour faciliter les échanges et les réservations, et mise en avant détaillée des offres. Focus sur l\'expérience visuelle et la facilité de navigation avec galeries photo immersives.',
     challenge: 'L\'agence perdait des clients face à la concurrence en ligne. Le site existant était obsolète, peu attractif et ne reflétait pas la qualité des voyages proposés.',
-    solution: 'Site moderne avec galeries photo immersives, présentation détaillée des destinations, système de recherche avancée et formulaires de contact intelligents avec qualification automatique des demandes.',
+    solution: 'Site moderne avec mise en avant détaillée des offres (destinations, circuits, tarifs), système de contact unifié et prise de rendez-vous automatisée pour qualifier les demandes et simplifier les réservations.',
     techStack: {
       'Frontend': ['React', 'Tailwind CSS'],
       'Backend': ['Strapi', 'Headless CMS']
     },
     tags: ['React', 'Strapi', 'Tailwind CSS', 'Headless CMS'],
     features: [
-      { title: 'Catalogue destinations', desc: 'Présentation riche avec galeries photos, itinéraires détaillés, tarifs et disponibilités en temps réel.' },
+      { title: 'Système de contact & rendez-vous', desc: 'Formulaire de contact centralisé et prise de rendez-vous automatisée pour faciliter les échanges et les réservations avec l\'agence.' },
+      { title: 'Mise en avant des offres', desc: 'Présentation détaillée des offres avec galeries photos, itinéraires, tarifs et disponibilités en temps réel pour chaque destination et circuit.' },
       { title: 'Recherche multicritères', desc: 'Filtres par destination, budget, durée, type de voyage et période pour trouver le séjour idéal.' },
-      { title: 'Devis personnalisés', desc: 'Formulaires intelligents avec qualification des besoins et génération automatique de devis préliminaires.' },
       { title: 'Expérience immersive', desc: 'Design moderne avec animations fluides, galeries interactives et optimisation mobile parfaite.' }
     ],
     kpis: [
@@ -177,8 +178,11 @@ export const projectsData = {
     },
     link: 'https://campagne-municipale.example.com',
     media: [
-      { src: 'https://source.unsplash.com/1600x900/?community,city,night,lights', alt: 'Communauté — ville & lumières' },
-      { src: 'https://source.unsplash.com/1600x900/?microphone,stage,neon', alt: 'Engagement — scène & micro' }
+      { src: `${BASE_URL}images/sausset-reuni-2026-accueil-campagne-municipale.png`, alt: 'Campagne municipale Sausset Réuni 2026 — Page d\'accueil' },
+      { src: `${BASE_URL}images/sausset-reuni-2026-page-liste-equipe-candidats.png`, alt: 'Campagne municipale — Page la liste, équipe et candidats' },
+      { src: `${BASE_URL}images/sausset-reuni-2026-page-comite-soutien-inscription.png`, alt: 'Campagne municipale — Page comité de soutien, formulaire d\'inscription' },
+      { src: `${BASE_URL}images/sausset-reuni-2026-page-calendrier-evenements.png`, alt: 'Campagne municipale — Page calendrier et prochains événements' },
+      { src: `${BASE_URL}images/sausset-reuni-2026-page-contact-formulaire.png`, alt: 'Campagne municipale — Page contact, formulaire et permanence' }
     ],
     overview: 'Site de campagne électorale complet avec présentation du programme politique, actualités de campagne et outils d\'engagement citoyen.',
     challenge: 'Besoin de communiquer rapidement sur les propositions et mobiliser les citoyens dans un temps limité avant les élections.',
@@ -206,7 +210,7 @@ export const projectsData = {
     category: 'website',
     badge: 'Contenu',
     title: 'Plateforme de recettes',
-    subtitle: 'Site de recettes avec CMS headless Strapi, recherche avancée par ingrédients et système de favoris.',
+    subtitle: 'Site de recettes avec WordPress, recherche avancée par ingrédients et système de favoris.',
     meta: {
       client: 'Chef cuisinier',
       durée: '3 mois',
@@ -221,12 +225,12 @@ export const projectsData = {
     ],
     overview: 'Plateforme de partage de recettes gastronomiques avec recherche avancée, filtres multiples et gestion de favoris personnalisés.',
     challenge: 'Organiser et rendre accessible une large collection de recettes avec recherche intuitive par ingrédients, difficulté et temps de préparation.',
-    solution: 'Site React avec Strapi CMS headless pour gestion du contenu, système de recherche full-text et filtrage avancé, profils utilisateurs avec favoris.',
+    solution: 'Site React avec WordPress pour la gestion du contenu, système de recherche full-text et filtrage avancé, profils utilisateurs avec favoris.',
     techStack: {
       'Frontend': ['React', 'TypeScript', 'Tailwind CSS'],
-      'Backend': ['Strapi', 'Headless CMS']
+      'Backend': ['WordPress']
     },
-    tags: ['React', 'Strapi', 'Headless CMS', 'TypeScript', 'Tailwind CSS'],
+    tags: ['React', 'WordPress', 'TypeScript', 'Tailwind CSS'],
     features: [
       { title: 'Recherche intelligente', desc: 'Recherche full-text par nom, ingrédients, tags avec suggestions automatiques.' },
       { title: 'Filtres avancés', desc: 'Filtrage par difficulté, temps de préparation, régime alimentaire et saison.' },
@@ -254,18 +258,23 @@ export const projectsData = {
     },
     link: '',
     media: [
-      { src: `${BASE_URL}images/ActionNuisibles13-homepage.png`, alt: 'Action Nuisibles 13 — Homepage' },
-      { src: `${BASE_URL}images/ActionNuisibles13-contact.png`, alt: 'Action Nuisibles 13 — Contact' },
-      { src: `${BASE_URL}images/ActionNuisibles13-engagements.png`, alt: 'Action Nuisibles 13 — Engagements' },
+      { src: `${BASE_URL}images/action-nuisibles-13-accueil-eradication-nuisibles.png`, alt: 'Action Nuisibles 13 — Accueil, éradication nuisibles Bouches-du-Rhône' },
+      { src: 'https://images.unsplash.com/photo-1599487488170-df9e2e64c3bf?w=800&q=80&fit=crop', alt: 'Nid de guêpes — éradication nuisibles' },
+      { src: `${BASE_URL}images/action-nuisibles-13-page-a-propos-engagement.png`, alt: 'Action Nuisibles 13 — Page à propos, engagement et excellence' },
+      { src: `${BASE_URL}images/action-nuisibles-13-page-services-lutte-anti-nuisibles.png`, alt: 'Action Nuisibles 13 — Page services, lutte anti-nuisibles particuliers et entreprises' },
+      { src: `${BASE_URL}images/action-nuisibles-13-page-service-particuliers.png`, alt: 'Action Nuisibles 13 — Service lutte anti-nuisibles pour particuliers' },
+      { src: `${BASE_URL}images/action-nuisibles-13-page-articles-conseils.png`, alt: 'Action Nuisibles 13 — Page articles, conseils et prévention nuisibles' },
+      { src: `${BASE_URL}images/action-nuisibles-13-article-solutions-anti-nuisibles-entreprise.png`, alt: 'Action Nuisibles 13 — Article solutions anti-nuisibles pour entreprise' },
+      { src: `${BASE_URL}images/action-nuisibles-13-page-contact-formulaire-devis.png`, alt: 'Action Nuisibles 13 — Page contact, formulaire et zones d\'intervention' }
     ],
     overview: 'Site vitrine professionnel pour artisan spécialisé dans l\'éradication de nuisibles avec prise de rendez-vous en ligne et optimisation SEO local.',
     challenge: 'Améliorer la visibilité locale et faciliter la prise de contact avec automatisation de la gestion des demandes d\'intervention.',
-    solution: 'Site WordPress optimisé avec plugin de réservation, fiches services détaillées et stratégie SEO local ciblant les villes d\'intervention.',
+    solution: 'Site React avec Strapi en headless CMS : réservation en ligne, fiches services détaillées et stratégie SEO local ciblant les villes d\'intervention.',
     techStack: {
-      'Frontend': ['WordPress'],
-      'Backend': ['PHP', 'MySQL']
+      'Frontend': ['React'],
+      'Backend': ['Strapi', 'Headless CMS']
     },
-    tags: ['WordPress', 'PHP', 'MySQL'],
+    tags: ['React', 'Strapi', 'Headless CMS'],
     features: [
       { title: 'Réservation en ligne', desc: 'Système de prise de rendez-vous avec sélection du service et estimation tarifaire.' },
       { title: 'Zones d\'intervention', desc: 'Carte interactive des villes et quartiers couverts avec délais d\'intervention.' },
@@ -293,9 +302,9 @@ export const projectsData = {
     },
     link: 'https://studio-apps.example.com',
     media: [
-      { src: 'https://source.unsplash.com/1600x900/?ui,ux,prototype,neon', alt: 'UI/UX — prototypes néon' },
-      { src: 'https://source.unsplash.com/1600x900/?code,terminal,glow', alt: 'Code — terminal lumineux' },
-      { src: 'https://source.unsplash.com/1600x900/?app,smartphone,3d', alt: 'Apps — smartphone 3D' }
+      { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&fit=crop', alt: 'Dashboard, données — studio d\'applications' },
+      { src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80&fit=crop', alt: 'Code, développement — framework' },
+      { src: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&fit=crop', alt: 'Mobile, apps — studio' }
     ],
     overview: 'Projet R&D visant à créer un framework de développement d\'applications mobiles avec templates réutilisables, automatisation des processus et documentation partagée.',
     challenge: 'Réduire le temps de développement d\'applications mobiles similaires et capitaliser sur les bonnes pratiques à travers les projets.',
@@ -313,8 +322,8 @@ export const projectsData = {
     ],
     kpis: [
       { value: '-60%', label: 'Temps dev', desc: 'Réduction du temps de développement' },
-      { value: '20+', label: 'Composants', desc: 'Dans la bibliothèque' },
-      { value: '3', label: 'Apps créées', desc: 'Avec le framework' }
+      { value: '200+', label: 'Composants', desc: 'Dans la bibliothèque' },
+      { value: '20+', label: 'Apps créées', desc: 'Avec le framework' }
     ]
   }
 };

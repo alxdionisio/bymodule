@@ -219,7 +219,7 @@ export default function ProjectDetail() {
           )}
 
           {/* Media carousel (après Défi/Solution) */}
-          {!['automation-bakery', 'travel-agency', 'political-campaign', 'app-studio'].includes(project.id) && (
+          {!['automation-bakery', 'app-studio'].includes(project.id) && (
           <div className="content-section">
             <h2 className="section-title">Aperçu visuel</h2>
             <div className={`project-media ${project.id === 'app-restaurant' ? 'portrait' : ''}`}>

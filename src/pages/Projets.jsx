@@ -243,7 +243,9 @@ export default function Portfolio() {
         <span className="filter-icon">⚙</span>
         <span className="filter-label">Filtres</span>
         {(activeFilter !== 'all' || activeTags.length > 0) && (
-          <span className="filter-active-badge">{activeTags.length || ''}</span>
+          <span className="filter-active-badge">
+            {(activeFilter !== 'all' ? 1 : 0) + activeTags.length}
+          </span>
         )}
       </button>
 
@@ -403,7 +405,7 @@ export default function Portfolio() {
                     >
                       <div className="project-image-container">
                         <img 
-                          src={getImageForProject(project.id, index)}
+                          src={getImageForProject(project.id, 0)}
                           alt={project.title}
                           className="project-image-placeholder"
                           loading="lazy"

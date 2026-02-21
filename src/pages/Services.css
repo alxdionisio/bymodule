@@ -436,11 +436,37 @@
 
 @media (max-width: 768px) {
   .services-hero {
-    padding: 8rem 1.5rem 4rem;
+    padding: 8rem 1.5rem 3.5rem;
+    min-height: 0;
+  }
+
+  .services-hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
   }
 
   .services-hero::before {
-    font-size: 15rem;
+    font-size: 14rem;
+    top: 60%;
+  }
+
+  .services-hero .hero-title {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+    margin-bottom: 0;
+  }
+
+  .services-hero .hero-subtitle {
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+    margin: 0;
+  }
+
+  .services-hero .breadcrumb {
+    font-size: 0.85rem;
+    margin-bottom: 0;
   }
 
   .services-section {
@@ -539,11 +565,30 @@
 
 @media (max-width: 480px) {
   .services-hero {
-    padding: 7rem 1rem 3rem;
+    padding-top: max(7rem, calc(env(safe-area-inset-top, 0px) + 5rem));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+    padding-bottom: 3rem;
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
   }
 
   .services-hero::before {
-    font-size: 10rem;
+    font-size: 9rem;
+    top: 55%;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 14vw, 3.5rem);
+    line-height: 0.95;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .breadcrumb {
+    margin-bottom: 1.25rem;
   }
 
   .service-card {
